@@ -5,6 +5,7 @@ COLOR_ORANGE = (236, 142, 44)
 COLOR_WHITE = (195, 209, 211)
 COLOR_SELECTED = (201, 79, 79)
 COLOR_FPS = (12, 109, 26)
+COLOR_RED = (255, 0, 0)
 
 # MENU
 MENU_OPTION = ('NEW GAME 1P', 'NEW GAME 2P - COOPERATIVE', 'NEW GAME 2P - COOPERATIVE', 'EXIT')
@@ -26,9 +27,13 @@ ENTITY_SPEED = {
     'Level1BG6': 5,
     'Level1BG7': 6,
     'Player1': 3,
+    'Player1Shot': 3,
     'Player2': 3,
-    'Enemy1': 2,
-    'Enemy2': 1
+    'Player2Shot': 3,
+    'Enemy1': 1,
+    'Enemy1Shot': 5,
+    'Enemy2': 1,
+    'Enemy2Shot': 5,
 }
 
 # Teclas dos jogadores
@@ -52,8 +57,22 @@ PLAYER_KEY_RIGHT = {
     'Player2': pygame.K_RIGHT
 }
 
+PLAYER_KEY_SHOOT = {
+    'Player1': pygame.K_SPACE,
+    'Player2': pygame.K_RCTRL
+}
+
+# Intervalos de criação de tiros quando a tecla de tiro for pressionada
+ENTITY_SHOT_DELAY = {
+    'Player1': 20,
+    'Player2': 15,
+    'Enemy1': 100,
+    'Enemy2': 200,
+}
+
 # Vida das entidades
 ENTITY_HEALTH = {
+    'Level1BG0': 999,
     'Level1BG1': 999,
     'Level1BG2': 999,
     'Level1BG3': 999,
@@ -62,7 +81,11 @@ ENTITY_HEALTH = {
     'Level1BG6': 999,
     'Level1BG7': 999,
     'Player1': 300,
+    'Player1Shot': 1,
     'Player2': 300,
-    'Enemy1': 300,
-    'Enemy2': 300
+    'Player2Shot': 1,
+    'Enemy1': 200,
+    'Enemy1Shot': 1,
+    'Enemy2': 200,
+    'Enemy2Shot': 1,
 }

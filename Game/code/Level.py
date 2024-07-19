@@ -3,14 +3,16 @@
 import random
 import sys
 
-import pygame.display
+import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import COLOR_FPS, MENU_OPTION, EVENT_ENEMY, COLOR_WHITE
+from code.Const import MENU_OPTION, EVENT_ENEMY, COLOR_WHITE, COLOR_FPS, COLOR_RED
+from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 from code.EntityMediator import EntityMediator
+from code.Player import Player
 
 
 class Level:
@@ -43,9 +45,21 @@ class Level:
                 self.window.blit(source=ent.surf, dest=ent.rect)  # aqui é desenhado as entidades
                 ent.move()
 
+                if isinstance(ent, (Player, Enemy)):
+                    shoot = ent.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)
+
             # texto a ser exibido na tela
             self.level_text(22, f'{clock.get_fps():.0f} FPS', COLOR_FPS, (10, 10))
-            self.level_text(22, f'entidades: {len(self.entity_list)}', COLOR_WHITE, (10, 25))
+
+            enemyCount = 0;
+            for ent in self.entity_list:
+                if ent.name == 'Enemy1' or ent.name == 'Enemy2':
+                    enemyCount += 1
+
+            self.level_text(22, f'{enemyCount} Inimigos', COLOR_RED, (10, 25))
+
 
             # Atualizar a tela
             pygame.display.flip()
