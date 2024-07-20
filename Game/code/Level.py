@@ -7,7 +7,7 @@ import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import MENU_OPTION, EVENT_ENEMY, COLOR_WHITE, COLOR_FPS, COLOR_RED, EVENT_TIMEOUT
+from code.Const import MENU_OPTION, EVENT_ENEMY, COLOR_GREEN, EVENT_TIMEOUT, ENTITY_SCORE, WIN_WIDTH, COLOR_WHITE
 from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
@@ -29,9 +29,9 @@ class Level:
         if menu_option in [MENU_OPTION[1], MENU_OPTION[2]]:
             self.entity_list.append(EntityFactory.get_entity('Player2'))
 
-        pygame.time.set_timer(EVENT_ENEMY, 4000)
+        pygame.time.set_timer(EVENT_ENEMY, 2000)
 
-        self.timeout = 20000 # definir tempo de cada level
+        self.timeout = 20000  # definir tempo de cada level
         pygame.time.set_timer(EVENT_TIMEOUT, 100)
 
     def run(self, ):
@@ -53,16 +53,14 @@ class Level:
                     if shoot is not None:
                         self.entity_list.append(shoot)
 
-            # texto a ser exibido na tela
-            self.level_text(22, f'{clock.get_fps():.0f} FPS', COLOR_FPS, (10, 10))
+                # textos a serem exibido na tela
+                if ent.name == 'Player1':
+                    self.level_text(22, f'Player 01: {ent.health}HP | Score: {ent.score}', COLOR_GREEN, (WIN_WIDTH - 400, 10))
+                if ent.name == 'Player2':
+                    self.level_text(22, f'Player 02: {ent.health}HP | Score: {ent.score}', COLOR_GREEN, (WIN_WIDTH - 400, 30))
+                    self.level_text(22, f'Score: {ent.score}', COLOR_GREEN, (10, 30))
 
-            enemyCount = 0;
-            for ent in self.entity_list:
-                if ent.name == 'Enemy1' or ent.name == 'Enemy2':
-                    enemyCount += 1
-
-            self.level_text(22, f'{enemyCount} Inimigos', COLOR_RED, (10, 25))
-
+            self.level_text(22, f'{clock.get_fps():.0f} FPS', COLOR_GREEN, (10, 10))
 
             # Atualizar a tela
             pygame.display.flip()

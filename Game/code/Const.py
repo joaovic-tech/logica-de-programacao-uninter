@@ -4,8 +4,9 @@ import pygame
 COLOR_ORANGE = (236, 142, 44)
 COLOR_WHITE = (195, 209, 211)
 COLOR_SELECTED = (201, 79, 79)
-COLOR_FPS = (12, 109, 26)
+COLOR_GREEN = (12, 109, 26)
 COLOR_RED = (255, 0, 0)
+COLOR_YELLOW = (255, 255, 128)
 
 # MENU
 MENU_OPTION = ('NEW GAME 1P', 'NEW GAME 2P - COOPERATIVE', 'NEW GAME 2P - COOPERATIVE', 'EXIT')
@@ -94,8 +95,56 @@ ENTITY_HEALTH = {
     'Player1Shot': 1,
     'Player2': 300,
     'Player2Shot': 1,
-    'Enemy1': 200,
+    'Enemy1': 50,
     'Enemy1Shot': 1,
-    'Enemy2': 200,
+    'Enemy2': 60,
     'Enemy2Shot': 1,
+}
+
+# Danos
+ENTITY_DAMAGE = {
+    'Level1BG0': 0,
+    'Level1BG1': 0,
+    'Level1BG2': 0,
+    'Level1BG3': 0,
+    'Level1BG4': 0,
+    'Level2BG0': 0,
+    'Level2BG1': 0,
+    'Level2BG2': 0,
+    'Level2BG3': 0,
+    'Level2BG4': 0,
+    'Level2BG5': 0,
+    'Level2BG6': 0,
+    'Player1': 1,
+    'Player1Shot': 25,
+    'Player2': 1,
+    'Player2Shot': 25,
+    'Enemy1': 5,
+    'Enemy1Shot': 20,
+    'Enemy2': 5,
+    'Enemy2Shot': 25,
+}
+
+# Pontos
+ENTITY_SCORE = {
+    'Level1BG0': 0,
+    'Level1BG1': 0,
+    'Level1BG2': 0,
+    'Level1BG3': 0,
+    'Level1BG4': 0,
+    'Level2BG0': 0,
+    'Level2BG1': 0,
+    'Level2BG2': 0,
+    'Level2BG3': 0,
+    'Level2BG4': 0,
+    'Level2BG5': 0,
+    'Level2BG6': 0,
+    'Player1': 0,
+    'Player1Shot': 0,
+    'Player2': 0,
+    'Player2Shot': 0,
+    'Enemy1': 100,
+    'Enemy1Shot': 0,
+    'Enemy2': 125,
+    'Enemy2Shot': 0,
 }
