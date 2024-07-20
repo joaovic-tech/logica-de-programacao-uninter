@@ -14,16 +14,24 @@ MENU_OPTION = ('NEW GAME 1P', 'NEW GAME 2P - COOPERATIVE', 'NEW GAME 2P - COOPER
 WIN_WIDTH = 576
 WIN_HEIGHT = 324
 
-# Evento do inimigo
+# Eventos
 EVENT_ENEMY = pygame.USEREVENT + 1
+EVENT_TIMEOUT = pygame.USEREVENT + 2
 
 # Velocidade das entidades
 ENTITY_SPEED = {
-    'Level1BG1': 0,
-    'Level1BG2': 1,
-    'Level1BG3': 2,
-    'Level1BG4': 3,
-    'Level1BG5': 4,
+    'Level1BG0': 0,
+    'Level1BG1': 1,
+    'Level1BG2': 2,
+    'Level1BG3': 3,
+    'Level1BG4': 4,
+    'Level2BG0': 0,
+    'Level2BG1': 1,
+    'Level2BG2': 2,
+    'Level2BG3': 3,
+    'Level2BG4': 4,
+    'Level2BG5': 4,
+    'Level2BG6': 4,
     'Player1': 3,
     'Player1Shot': 3,
     'Player2': 3,
@@ -70,11 +78,18 @@ ENTITY_SHOT_DELAY = {
 
 # Vida das entidades
 ENTITY_HEALTH = {
+    'Level1BG0': 999,
     'Level1BG1': 999,
     'Level1BG2': 999,
     'Level1BG3': 999,
     'Level1BG4': 999,
-    'Level1BG5': 999,
+    'Level2BG0': 999,
+    'Level2BG1': 999,
+    'Level2BG2': 999,
+    'Level2BG3': 999,
+    'Level2BG4': 999,
+    'Level2BG5': 999,
+    'Level2BG6': 999,
     'Player1': 300,
     'Player1Shot': 1,
     'Player2': 300,

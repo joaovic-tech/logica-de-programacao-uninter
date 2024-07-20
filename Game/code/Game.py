@@ -19,9 +19,16 @@ class Game:
             menu = Menu(self.window)
             menu_return = menu.run()
 
-            if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:
-                level = Level(self.window, 'Level1', menu_return)
-                level_return = level.run()
+            if menu_return in MENU_OPTION[:3]:  # Considerando que MENU_OPTION tem pelo menos 3 elementos
+                levels = ['Level1', 'Level2']
+
+                for level_name in levels:
+                    level = Level(self.window, level_name, menu_return)
+                    level_return = level.run()
+
+                    if not level_return:
+                        break
+
             else:
                 pygame.quit()
                 sys.exit()
