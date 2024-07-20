@@ -14,7 +14,7 @@ class EntityFactory:
         match entity_name:
             case 'Level1BG':
                 list_bg = []
-                for i in range(8):
+                for i in range(6):
                     if i == 0:
                         i += 1
 

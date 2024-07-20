@@ -24,8 +24,6 @@ ENTITY_SPEED = {
     'Level1BG3': 2,
     'Level1BG4': 3,
     'Level1BG5': 4,
-    'Level1BG6': 5,
-    'Level1BG7': 6,
     'Player1': 3,
     'Player1Shot': 3,
     'Player2': 3,
@@ -72,14 +70,11 @@ ENTITY_SHOT_DELAY = {
 
 # Vida das entidades
 ENTITY_HEALTH = {
-    'Level1BG0': 999,
     'Level1BG1': 999,
     'Level1BG2': 999,
     'Level1BG3': 999,
     'Level1BG4': 999,
     'Level1BG5': 999,
-    'Level1BG6': 999,
-    'Level1BG7': 999,
     'Player1': 300,
     'Player1Shot': 1,
     'Player2': 300,
