@@ -1,15 +1,30 @@
 # COLORS
 import pygame
 
-COLOR_ORANGE = (236, 142, 44)
 COLOR_WHITE = (195, 209, 211)
+COLOR_BLACK = (1, 4, 9)
+COLOR_ORANGE = (236, 142, 44)
 COLOR_SELECTED = (201, 79, 79)
 COLOR_GREEN = (12, 109, 26)
 COLOR_RED = (255, 0, 0)
 COLOR_YELLOW = (255, 255, 128)
 
 # MENU
-MENU_OPTION = ('NEW GAME 1P', 'NEW GAME 2P - COOPERATIVE', 'NEW GAME 2P - COOPERATIVE', 'EXIT')
+MENU_OPTION = (
+    'NEW GAME 1P',
+    'NEW GAME 2P - COOPERATIVE',
+    'NEW GAME 2P - COMPETITIVE',
+    'Score',
+    'EXIT'
+)
+
+MENU_OPTION_SPACE = (
+        175 + 25,
+        175 + 50,
+        175 + 75,
+        175 + 100,
+        175 + 125
+)
 
 # DIMENSIONS
 WIN_WIDTH = 576
@@ -147,4 +162,21 @@ ENTITY_SCORE = {
     'Enemy1Shot': 0,
     'Enemy2': 125,
     'Enemy2Shot': 0,
+}
+
+SCORE_POSITION = {
+    'Title': (WIN_WIDTH / 2, 50),
+    'EnterName': (WIN_WIDTH / 2, 80),
+    'Label': (WIN_WIDTH / 2, 90),
+    'Name': (WIN_WIDTH / 2, 110),
+    0: (WIN_WIDTH / 2, 110),
+    1: (WIN_WIDTH / 2, 130),
+    2: (WIN_WIDTH / 2, 150),
+    3: (WIN_WIDTH / 2, 170),
+    4: (WIN_WIDTH / 2, 190),
+    5: (WIN_WIDTH / 2, 210),
+    6: (WIN_WIDTH / 2, 230),
+    7: (WIN_WIDTH / 2, 250),
+    8: (WIN_WIDTH / 2, 270),
+    9: (WIN_WIDTH / 2, 290)
 }

@@ -7,7 +7,8 @@ import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import MENU_OPTION, EVENT_ENEMY, COLOR_GREEN, EVENT_TIMEOUT, ENTITY_SCORE, WIN_WIDTH, COLOR_WHITE
+from code.Const import MENU_OPTION, EVENT_ENEMY, COLOR_GREEN, EVENT_TIMEOUT, ENTITY_SCORE, WIN_WIDTH, COLOR_WHITE, \
+    WIN_HEIGHT
 from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
@@ -35,9 +36,9 @@ class Level:
             player.score = player_score[1]
             self.entity_list.append(player)
 
-        pygame.time.set_timer(EVENT_ENEMY, 2000)
+        pygame.time.set_timer(EVENT_ENEMY, 1000)
 
-        self.timeout = 20000  # definir tempo de cada level
+        self.timeout = 5000  # definir tempo de cada level
         pygame.time.set_timer(EVENT_TIMEOUT, 100)
 
     def run(self, player_score: list[int]):
@@ -67,7 +68,7 @@ class Level:
                     self.level_text(22, f'Score: {ent.score}', COLOR_GREEN, (10, 30))
 
             self.level_text(22, f'{clock.get_fps():.0f} FPS', COLOR_GREEN, (10, 10))
-            self.level_text(22, f'{self.name} - Timeout: {self.timeout / 1000:.0f}s', COLOR_GREEN, (10, 30))
+            self.level_text(22, f'{self.name} - {self.timeout / 1000:.0f}s', COLOR_GREEN, (WIN_WIDTH - 160, 10))
 
             # Atualizar a tela
             pygame.display.flip()
