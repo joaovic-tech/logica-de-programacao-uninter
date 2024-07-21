@@ -95,9 +95,9 @@ ENTITY_HEALTH = {
     'Player1Shot': 1,
     'Player2': 300,
     'Player2Shot': 1,
-    'Enemy1': 50,
+    'Enemy1': 100,
     'Enemy1Shot': 1,
-    'Enemy2': 60,
+    'Enemy2': 100,
     'Enemy2Shot': 1,
 }
 

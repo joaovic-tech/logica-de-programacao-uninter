@@ -20,11 +20,12 @@ class Game:
             menu_return = menu.run()
 
             if menu_return in MENU_OPTION[:3]:  # Considerando que MENU_OPTION tem pelo menos 3 elementos
+                player_score = [0, 0]
                 levels = ['Level1', 'Level2']
 
                 for level_name in levels:
-                    level = Level(self.window, level_name, menu_return)
-                    level_return = level.run()
+                    level = Level(self.window, level_name, menu_return, player_score)
+                    level_return = level.run(player_score)
 
                     if not level_return:
                         break
